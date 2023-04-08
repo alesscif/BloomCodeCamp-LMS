@@ -4,15 +4,15 @@
 ## Synopsis
 Bloom Coders, a small code camp has been struggling to keep track of their learners assignments, over time this has become a logistical nightmare. The managers have requested the engineering teams come up with some solutions and one part of the problem is that they do not have a good way for a learner to submit assignments and get them reviewed. If only there were an app or program that could facilitate this for the learners that need to submit assignments and some professionals who could review those assignments...
 
-Enter **The Bloom Coder Assignment App** a solution to all their needs, *or at least their immidiate assignment review triage needs*. in this app we will need a few things to get it to do what we want. we have interviewed some learners and some reviewers and here are their Stories.
+Enter **The Bloom Coder Assignment App** a solution to all their needs, *or at least their immediate assignment review triage needs*. This app will require several components to get it to do what we want. We have interviewed some learners and some reviewers and here are their Stories.
 
 ## User Stories
 
 ### Learner User Stories
 #### Bob the learner
-Meet Bob he is an ex rigger from the north sea and he wanted to persue a career in software engineering, he has aspirations of becomming a full stack web developer and later entering the realms of backend development as he progresses in his career. He came to `Bloom Code Camp` to get a step up on the cometition. Bob has some requests of the team.
+Meet Bob, an ex-rigger from the north sea intending to persue a career in software engineering. He has aspirations of becomming a full stack web developer and later entering the realms of backend development as he progresses in his career. He came to `Bloom Code Camp` to get a step up on the competition. Bob has some requests of the team.
 
-- As a Learner i want to be able to log in to the app and be presented with a dashboard
+- As a Learner I want to be able to log in to the app and be presented with a dashboard
 - As a learner I want a dashboard that shows all of my currently working on, submitted, rejected, and completed assignments.
 
 #### Jen the learner
