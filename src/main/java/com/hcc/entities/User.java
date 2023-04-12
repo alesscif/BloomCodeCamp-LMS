@@ -1,6 +1,5 @@
 package com.hcc.entities;
 
-import com.hcc.enums.AuthorityEnum;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,9 +8,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import static com.hcc.enums.AuthorityEnum.ROLE_LEARNER;
-import static com.hcc.enums.AuthorityEnum.ROLE_REVIEWER;
 
 @Entity
 @Table(name = "users")
