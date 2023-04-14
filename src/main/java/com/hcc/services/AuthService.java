@@ -4,7 +4,6 @@ import com.hcc.DTOs.AuthCredentialRequest;
 import com.hcc.entities.User;
 import com.hcc.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +21,9 @@ public class AuthService {
         }
         else throw new IllegalArgumentException("invalid credentials");
     }
-    public boolean validate(String token, UserDetails user) {
+    public boolean validate(String token) {
+        User user = new User();
+        user.setUsername(jwtUtil.getUsernameFromToken(token));
         return jwtUtil.validateToken(token, user);
     }
 }

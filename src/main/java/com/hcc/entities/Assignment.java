@@ -8,6 +8,7 @@ public class Assignment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String status;
     @Column
     private Integer number;

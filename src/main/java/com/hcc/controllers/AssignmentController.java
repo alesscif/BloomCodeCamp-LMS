@@ -1,13 +1,11 @@
 package com.hcc.controllers;
 
-import com.hcc.enums.AuthorityEnum;
-import com.hcc.repositories.AssignmentRepository;
-import com.hcc.repositories.AuthorityRepository;
+import com.hcc.entities.User;
 import com.hcc.services.AssignmentService;
-import com.hcc.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import com.hcc.entities.Assignment;
 
@@ -19,12 +17,9 @@ import java.util.List;
 public class AssignmentController {
     @Autowired
     AssignmentService assignmentService;
-    @Autowired
-    private JwtUtil jwtUtil;
     @GetMapping
-    public ResponseEntity<List<Assignment>> getAssignmentsByUser(@RequestBody String token) {
-        String username = jwtUtil.getUsernameFromToken(token);
-        return new ResponseEntity<>(assignmentService.loadAssignmentsByUsername(username), HttpStatus.OK);
+    public ResponseEntity<List<Assignment>> getAssignmentsByUser(@AuthenticationPrincipal User user) {
+        return new ResponseEntity<>(assignmentService.getAssignmentsByUser(user), HttpStatus.OK);
     }
     @GetMapping("/{id}")
     public ResponseEntity<Assignment> getAssignmentById(@PathVariable Long id) {
@@ -36,9 +31,11 @@ public class AssignmentController {
         }
     }
     @PutMapping("/{id}")
-    public void putAssignmentById(@PathVariable Long id) {
+    public ResponseEntity<Assignment> putAssignmentById(@AuthenticationPrincipal User user, @PathVariable Long id, @RequestBody List<String> fields) {
+        return new ResponseEntity<>(assignmentService.editAssignment(user, id, fields), HttpStatus.OK);
     }
     @PostMapping
-    public void postAssignment() {
+    public ResponseEntity<Assignment> postAssignment(@AuthenticationPrincipal User user, @RequestBody List<String> fields) {
+        return new ResponseEntity<>(assignmentService.saveAssignment(Integer.valueOf(fields.get(0)), fields.get(1), fields.get(2), user), HttpStatus.OK);
     }
 }
