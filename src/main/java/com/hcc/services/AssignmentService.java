@@ -18,7 +18,7 @@ public class AssignmentService {
         if (user.getAuthorities().contains(AuthorityEnum.ROLE_REVIEWER.name()))
             return assignmentRepo.findByStatus(AssignmentStatusEnum.SUBMITTED.name());
          else
-            return assignmentRepo.findByUsername(user.getUsername());
+            return assignmentRepo.findByUser(user);
     }
     public Assignment getAssignmentById(Long id) {
         return assignmentRepo.getReferenceById(id);

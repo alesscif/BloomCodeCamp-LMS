@@ -13,7 +13,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/assignments")
+@RequestMapping("/api/assignments")
 public class AssignmentController {
     @Autowired
     AssignmentService assignmentService;
