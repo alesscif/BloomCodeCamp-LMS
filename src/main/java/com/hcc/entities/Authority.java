@@ -1,6 +1,5 @@
 package com.hcc.entities;
 
-import com.hcc.enums.AuthorityEnum;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
