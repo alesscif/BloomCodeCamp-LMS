@@ -33,7 +33,6 @@ public class AuthController {
             User user = (User) auth.getPrincipal();
             user.setPassword(null);
             return ResponseEntity.ok().body(jwtUtil.generateToken(user));
-//            return new ResponseEntity<>(authService.login(), HttpStatus.OK);
         }
         catch (BadCredentialsException e) {
             return new ResponseEntity<>("invalid credentials", HttpStatus.UNAUTHORIZED);
