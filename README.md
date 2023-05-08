@@ -1,7 +1,7 @@
 # Bloom Code Camp LMS
 
 ## Welcome to the Backend Repository for Bloom Code Camp LMS, an assignment review app!
-To set up the project, clone it after making sure to have the prerequisites of
+To set up, clone the repository after making sure to have the prerequisites of
 - docker / dockerdesktop
 - docker compose
 - Java JRE and JDK 17+
